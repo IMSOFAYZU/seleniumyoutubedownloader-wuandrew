@@ -24,6 +24,9 @@ async function execute() {
     var firstVideoLink=await firstVideoLinkContainer.findElement(webdriver.By.tagName("a"));
     var href=await firstVideoLink.getAttribute("href");
 
+    await driver.get("https://www.safetoconvert.com/convert-youtube-video");
+    var urlElement=await getElement(driver, webdriver.By.name("s"), 3000);
+    urlElement.sendKeys(href);
 }
 
 execute();
