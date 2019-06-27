@@ -19,6 +19,11 @@ async function execute() {
     await searchBox.sendKeys("復仇者");
     var searchButton=await getElement(driver, webdriver.By.id("search-icon-legacy"), 3000);
     await searchButton.click();
+
+    var firstVideoLinkContainer=await getElement(driver, webdriver.By.tagName("ytd-video-renderer"), 3000);
+    var firstVideoLink=await firstVideoLinkContainer.findElement(webdriver.By.tagName("a"));
+    var href=await firstVideoLink.getAttribute("href");
+
 }
 
 execute();
