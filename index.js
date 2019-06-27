@@ -27,6 +27,10 @@ async function execute() {
     await driver.get("https://www.safetoconvert.com/convert-youtube-video");
     var urlElement=await getElement(driver, webdriver.By.name("s"), 3000);
     urlElement.sendKeys(href);
+
+    var convertButton=await getElement(driver, webdriver.By.className("fa-search"), 3000);
+    await convertButton.click();
+
 }
 
 execute();
