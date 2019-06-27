@@ -31,6 +31,10 @@ async function execute() {
     var convertButton=await getElement(driver, webdriver.By.className("fa-search"), 3000);
     await convertButton.click();
 
+    var downloadButton=await getElement(driver, webdriver.By.className("btn-success"), 30000);
+    await downloadButton.click();
+    
+
 }
 
 execute();
