@@ -13,6 +13,12 @@ async function execute() {
     var builder = new webdriver.Builder();
     builder.forBrowser(BROWSER);
     var driver = builder.build();
+
+    await driver.get("https://www.youtube.com/?gl=TW&hl=zh-TW");
+    var searchBox=await getElement(driver, webdriver.By.name("search_query"), 3000);
+    await searchBox.sendKeys("復仇者");
+    var searchButton=await getElement(driver, webdriver.By.id("search-icon-legacy"), 3000);
+    await searchButton.click();
 }
 
 execute();
